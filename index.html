@@ -3,269 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoniX Pro - El Futuro del Sonido</title>
+    <title>AsuneTech — Notas sobre hardware y tecnología</title>
+    
     <style>
-        /* 1. RESET Y VARIABLES (Paleta de colores 60-30-10) */
         :root {
-            --bg-color: #f8fafc;       /* 60% Fondo claro y limpio */
-            --text-dark: #0f172a;     /* 30% Texto principal y estructura */
-            --text-muted: #64748b;    /* Texto secundario */
-            --accent-color: #3b82f6;  /* 10% Color de acento (Azul llamativo para botones) */
-            --accent-hover: #1d4ed8;  /* Azul oscuro para interacciones */
-            --card-bg: #ffffff;
+            --bg: #ffffff;            
+            --text: #18181b;          
+            --text-muted: #71717a;    
+            --accent: #2563eb;        /* El toque azul de Asune */
+            --accent-hover: #1d4ed8;
+            --line: #f4f4f5;          
+            --bg-button: #18181b;     /* Botón principal oscuro para mantener el minimalismo */
+            --bg-button-hover: #27272a;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-dark);
+            background-color: var(--bg);
+            color: var(--text);
             line-height: 1.6;
+            padding-bottom: 100px;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 680px; 
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        /* 2. CABECERA (NAVBAR) */
+        /* CABECERA MINIMALISTA */
         header {
-            background-color: var(--card-bg);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
+            padding: 60px 0 40px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
         }
 
-        .logo {
-            font-size: 24px;
+        .brand {
+            font-size: 20px;
             font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .logo span {
-            color: var(--accent-color);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-
-        .nav-links a {
             text-decoration: none;
-            color: var(--text-muted);
-            font-weight: 500;
-            transition: color 0.3s;
+            color: var(--text);
+            letter-spacing: -0.5px;
         }
 
-        .nav-links a:hover {
-            color: var(--text-dark);
+        .brand span {
+            color: var(--accent);
         }
 
-        /* 3. SECCIÓN HERO (Presentación del producto) */
-        .hero {
-            padding: 80px 0;
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .hero-content {
-            flex: 1;
-        }
-
-        .badge {
-            background-color: #dbeafe;
-            color: var(--accent-color);
-            padding: 5px 12px;
-            border-radius: 20px;
+        .nav-minimal a {
             font-size: 14px;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 15px;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.2s;
         }
 
-        .hero-content h1 {
-            font-size: 48px;
-            line-height: 1.2;
+        .nav-minimal a:hover {
+            color: var(--text);
+        }
+
+        /* INTRODUCCIÓN HUMANA */
+        .intro {
+            margin-top: 20px;
+            margin-bottom: 60px;
+        }
+
+        .intro h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.8px;
+            line-height: 1.3;
+            margin-bottom: 16px;
+        }
+
+        .intro p {
+            font-size: 16px;
+            color: var(--text-muted);
+        }
+
+        /* SECCIONES Y BOTONES */
+        .section-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .article-block {
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .article-block:last-of-type {
+            border-bottom: none;
+        }
+
+        .post-meta {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .article-block h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 12px;
+            letter-spacing: -0.4px;
+        }
+
+        .article-block p {
+            font-size: 15px;
+            color: var(--text-muted);
             margin-bottom: 20px;
         }
 
-        .hero-content p {
-            color: var(--text-muted);
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 14px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
-        }
-
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* Imagen simulada con CSS para que funcione sin archivos externos */
-        .product-mockup {
-            width: 350px;
-            height: 350px;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            border-radius: 20px;
-            display: flex;
+        /* ⬇️ BOTONES OPERATIVOS MINIMALISTAS ⬇️ */
+        .btn-action {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            background-color: var(--bg-button);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.2s, transform 0.1s;
         }
 
-        /* 4. SECCIÓN CARACTERÍSTICAS */
-        .features {
-            background-color: var(--card-bg);
-            padding: 80px 0;
+        .btn-action:hover {
+            background-color: var(--bg-button-hover);
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 50px;
+        .btn-action:active {
+            transform: scale(0.98);
         }
 
-        .grid-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+        .btn-action span {
+            margin-left: 6px;
+            opacity: 0.6;
         }
 
-        .feature-card {
-            padding: 30px;
-            border-radius: 12px;
-            background-color: var(--bg-color);
-            border: 1px solid #e2e8f0;
-            text-align: center;
+        /* Botón secundario tipo enlace para navegación */
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s;
         }
 
-        .feature-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-            display: inline-block;
+        .btn-secondary:hover {
+            color: var(--accent);
         }
 
-        .feature-card h3 {
-            margin-bottom: 10px;
-            font-size: 20px;
+        .btn-secondary span {
+            margin-left: 4px;
+            transition: transform 0.2s;
         }
 
-        .feature-card p {
+        .btn-secondary:hover span {
+            transform: translateX(3px);
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            font-size: 13px;
             color: var(--text-muted);
-            font-size: 15px;
-        }
-
-        /* 5. DISEÑO RESPONSIVO (Móviles) */
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding: 40px 0;
-            }
-
-            .hero-content h1 {
-                font-size: 32px;
-            }
-
-            .nav-links {
-                display: none; /* Simplificado para el ejemplo móvil */
-            }
-
-            .product-mockup {
-                width: 260px;
-                height: 260px;
-            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container nav-container">
-            <div class="logo">SoniX<span>.</span></div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#caracteristicas">Características</a></li>
-                <li><a href="#comprar">Comprar</a></li>
-            </ul>
-        </div>
-    </header>
+    <div class="container">
+        
+        <header>
+            <a href="#" class="brand">asune<span>tech.</span></a>
+            <nav class="nav-minimal">
+                <a href="#notas">Notas</a>
+                <a href="mailto:tu-correo@email.com">Contacto</a>
+            </nav>
+        </header>
 
-    <section id="inicio" class="container">
-        <div class="hero">
-            <div class="hero-content">
-                <span class="badge">🔥 Novedad Exclusiva</span>
-                <h1>El sonido puro que te acompaña siempre</h1>
-                <p>Descubre los nuevos SoniX Pro. Cancelación de ruido inteligente, 40 horas de autonomía y un diseño ergonómico premium diseñado para el día a día.</p>
-                <a href="#comprar" class="btn-primary">Comprar Ahora — Envío Gratis</a>
-            </div>
-            <div class="hero-image">
-                <div class="product-mockup">
-                    [ Imagen de Tu Producto ]
-                </div>
-            </div>
-        </div>
-    </section>
+        <section class="intro">
+            <h1>Hola. Aquí analizo la tecnología y el hardware que uso en mi día a día.</h1>
+            <p>No busco rellenar con especificaciones técnicas que puedes encontrar en cualquier sitio. Prefiero centrarme en el rendimiento real, la ergonomía y si un componente de verdad vale lo que cuesta.</p>
+        </section>
 
-    <section id="caracteristicas" class="features">
-        <div class="container">
-            <h2 class="section-title">¿Por qué elegir SoniX Pro?</h2>
-            <div class="grid-features">
-                <div class="feature-card">
-                    <span class="feature-icon">🎧</span>
-                    <h3>Sonido Hi-Fi</h3>
-                    <p>Agudos cristalinos y graves profundos que te harán vibrar con cada canción.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">🔋</span>
-                    <h3>Batería Infinita</h3>
-                    <p>Hasta 40 horas de reproducción total con su estuche de carga rápida inteligente.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">🔇</span>
-                    <h3>Cancelación Activa</h3>
-                    <p>Aísla por completo el ruido del exterior para concentrarte en lo que importa.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <main id="notas">
+            <h2 class="section-title">Análisis destacados & Recomendaciones</h2>
+            
+            <article class="article-block">
+                <div class="post-meta">Audio & Acústica</div>
+                <h3>El valor real de la cancelación activa en el día a día</h3>
+                <p>Tras probar varios componentes buscando el aislamiento acústico óptimo, he seleccionado una opción con una curva de respuesta limpia y un rendimiento sobresaliente en entornos con ruido constante. Puedes ver los detalles técnicos y disponibilidad actual aquí.</p>
+                
+                <a href="TU_ENLACE_DE_AFILIADO_AQUÍ" target="_blank" rel="noopener nofollow" class="btn-action">
+                    Ver componente recomendado <span>↗</span>
+                </a>
+            </article>
+
+            <article class="article-block">
+                <div class="post-meta">Setup & Ergonomía</div>
+                <h3>Optimización del espacio de trabajo y periféricos de precisión</h3>
+                <p>Notas sobre la elección de herramientas de alta precisión y cómo estructurar la disposición del escritorio buscando comodidad en sesiones largas de rendimiento intensivo.</p>
+                
+                <a href="#proximamente" class="btn-secondary">
+                    Leer análisis completo <span>➔</span>
+                </a>
+            </article>
+
+            <article class="article-block">
+                <div class="post-meta">Hardware Portátil</div>
+                <h3>Eficiencia energética y comportamiento de paneles en movilidad</h3>
+                <p>Evaluación independiente sobre la autonomía real de dispositivos actuales bajo alta demanda y la tasa de respuesta visual óptima en situaciones de luz directa.</p>
+                
+                <a href="TU_ENLACE_DE_AFILIADO_2" target="_blank" rel="noopener nofollow" class="btn-action">
+                    Ver hardware analizado <span>↗</span>
+                </a>
+            </article>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 AsuneTech. Notas independientes sobre rendimiento de hardware y sistemas.</p>
+        </footer>
+
+    </div>
 
 </body>
 </html>
