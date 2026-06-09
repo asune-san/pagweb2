@@ -3,6 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Análisis independiente sobre hardware y tecnología. Opiniones honestas sobre rendimiento, ergonomía y valor real de componentes.">
+    <meta name="keywords" content="hardware, tecnología, análisis, recomendaciones, audio, setup, ergonomía">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AsuneTech — Notas sobre hardware y tecnología">
+    <meta property="og:description" content="Análisis independiente sobre rendimiento y ergonomía de componentes de hardware.">
+    <meta property="og:url" content="https://asuntech.com/">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://asuntech.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    
     <title>AsuneTech — Notas sobre hardware y tecnología</title>
     
     <style>
@@ -51,10 +66,20 @@
             text-decoration: none;
             color: var(--text);
             letter-spacing: -0.5px;
+            transition: color 0.2s;
+        }
+
+        .brand:hover {
+            color: var(--accent);
         }
 
         .brand span {
             color: var(--accent);
+        }
+
+        .nav-minimal {
+            display: flex;
+            align-items: center;
         }
 
         .nav-minimal a {
@@ -67,6 +92,22 @@
 
         .nav-minimal a:hover {
             color: var(--text);
+        }
+
+        /* SKIP TO CONTENT LINK (Accessibility) */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--accent);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 0;
         }
 
         /* INTRODUCCIÓN HUMANA */
@@ -86,6 +127,7 @@
         .intro p {
             font-size: 16px;
             color: var(--text-muted);
+            line-height: 1.7;
         }
 
         /* SECCIONES Y BOTONES */
@@ -118,6 +160,12 @@
             margin-bottom: 6px;
         }
 
+        .post-date {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
         .article-block h3 {
             font-size: 20px;
             font-weight: 600;
@@ -130,6 +178,7 @@
             font-size: 15px;
             color: var(--text-muted);
             margin-bottom: 20px;
+            line-height: 1.7;
         }
 
         /* ⬇️ BOTONES OPERATIVOS MINIMALISTAS ⬇️ */
@@ -144,6 +193,7 @@
             font-size: 14px;
             font-weight: 500;
             transition: background-color 0.2s, transform 0.1s;
+            cursor: pointer;
         }
 
         .btn-action:hover {
@@ -152,6 +202,11 @@
 
         .btn-action:active {
             transform: scale(0.98);
+        }
+
+        .btn-action:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
         }
 
         .btn-action span {
@@ -174,6 +229,11 @@
             color: var(--accent);
         }
 
+        .btn-secondary:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
         .btn-secondary span {
             margin-left: 4px;
             transition: transform 0.2s;
@@ -190,23 +250,35 @@
             font-size: 13px;
             color: var(--text-muted);
         }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--accent-hover);
+        }
     </style>
 </head>
 <body>
 
+    <a href="#notas" class="skip-link">Saltar al contenido principal</a>
+
     <div class="container">
         
         <header>
-            <a href="#" class="brand">asune<span>tech.</span></a>
+            <a href="/" class="brand" rel="home">asune<span>tech.</span></a>
             <nav class="nav-minimal">
                 <a href="#notas">Notas</a>
-                <a href="mailto:tu-correo@email.com">Contacto</a>
+                <a href="mailto:contacto@asuntech.com">Contacto</a>
             </nav>
         </header>
 
         <section class="intro">
             <h1>Hola. Aquí analizo la tecnología y el hardware que uso en mi día a día.</h1>
-            <p>No busco rellenar con especificaciones técnicas que puedes encontrar en cualquier sitio. Prefiero centrarme en el rendimiento real, la ergonomía y si un componente de verdad vale lo que cuesta.</p>
+            <p>No busco rellenar con especificaciones técnicas que puedes encontrar en cualquier sitio. Prefiero centrarme en el rendimiento real, la ergonomía y si un componente de verdad vale la pena. Cada análisis viene de experiencia práctica prolongada, no de datasheets. Si te interesa cómo elegir herramientas que realmente funcionan, estás en el lugar correcto.</p>
         </section>
 
         <main id="notas">
@@ -214,37 +286,40 @@
             
             <article class="article-block">
                 <div class="post-meta">Audio & Acústica</div>
+                <div class="post-date">Actualizado: Junio 2026</div>
                 <h3>El valor real de la cancelación activa en el día a día</h3>
-                <p>Tras probar varios componentes buscando el aislamiento acústico óptimo, he seleccionado una opción con una curva de respuesta limpia y un rendimiento sobresaliente en entornos con ruido constante. Puedes ver los detalles técnicos y disponibilidad actual aquí.</p>
+                <p>Tras probar varios componentes buscando el aislamiento acústico óptimo, he seleccionado una opción con una curva de respuesta limpia y un rendimiento sobresaliente en entornos con ruido ambiental variable. No es la más cara, pero cumple exactamente lo que promete. Analizo cómo la cancelación activa verdaderamente impacta en la concentración durante sesiones de trabajo intenso, y cómo los diferentes tipos de controladores afectan la experiencia auditiva real.</p>
                 
-                <a href="TU_ENLACE_DE_AFILIADO_AQUÍ" target="_blank" rel="noopener nofollow" class="btn-action">
+                <a href="#" target="_blank" rel="noopener nofollow" class="btn-action">
                     Ver componente recomendado <span>↗</span>
                 </a>
             </article>
 
             <article class="article-block">
                 <div class="post-meta">Setup & Ergonomía</div>
+                <div class="post-date">Próximamente</div>
                 <h3>Optimización del espacio de trabajo y periféricos de precisión</h3>
-                <p>Notas sobre la elección de herramientas de alta precisión y cómo estructurar la disposición del escritorio buscando comodidad en sesiones largas de rendimiento intensivo.</p>
+                <p>Notas sobre la elección de herramientas de alta precisión y cómo estructurar la disposición del escritorio buscando comodidad en sesiones largas de rendimiento intensivo. Desde la altura correcta del monitor hasta la selección de un teclado mecánico adecuado, cada detalle cuenta cuando pasas 8+ horas diarias frente a la pantalla.</p>
                 
-                <a href="#proximamente" class="btn-secondary">
+                <a href="#" class="btn-secondary">
                     Leer análisis completo <span>➔</span>
                 </a>
             </article>
 
             <article class="article-block">
                 <div class="post-meta">Hardware Portátil</div>
+                <div class="post-date">Actualizado: Junio 2026</div>
                 <h3>Eficiencia energética y comportamiento de paneles en movilidad</h3>
-                <p>Evaluación independiente sobre la autonomía real de dispositivos actuales bajo alta demanda y la tasa de respuesta visual óptima en situaciones de luz directa.</p>
+                <p>Evaluación independiente sobre la autonomía real de dispositivos actuales bajo alta demanda y la tasa de respuesta visual óptima en situaciones de luz directa. Probé diferentes resoluciones de pantalla y tipos de panel (IPS, OLED, Mini-LED) en condiciones reales de trabajo remoto. Los números del fabricante son optimistas; aquí te digo qué esperar realmente.</p>
                 
-                <a href="TU_ENLACE_DE_AFILIADO_2" target="_blank" rel="noopener nofollow" class="btn-action">
+                <a href="#" target="_blank" rel="noopener nofollow" class="btn-action">
                     Ver hardware analizado <span>↗</span>
                 </a>
             </article>
         </main>
 
         <footer>
-            <p>&copy; 2026 AsuneTech. Notas independientes sobre rendimiento de hardware y sistemas.</p>
+            <p>&copy; 2026 <strong>AsuneTech</strong>. Notas independientes sobre rendimiento de hardware y sistemas. <a href="mailto:contacto@asuntech.com">Contacto</a></p>
         </footer>
 
     </div>
